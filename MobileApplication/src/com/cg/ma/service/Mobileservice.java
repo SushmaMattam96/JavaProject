@@ -13,4 +13,6 @@ public interface Mobileservice {
 
 	List<CustomerMobileDetails> getpricedetails(Double mobileprice, Double upperRange)throws MAException;
 
+	int deletemobile(int Mobileid) throws MAException;
+
 }

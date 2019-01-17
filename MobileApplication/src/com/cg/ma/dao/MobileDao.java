@@ -15,4 +15,6 @@ public interface MobileDao {
 
 	List<CustomerMobileDetails> getpricedetails(Double mobileprice, Double upperRange)throws MAException;
 
+	int getdeletedetails(int Mobileid) throws MAException;
+
 }

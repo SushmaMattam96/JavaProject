@@ -84,7 +84,21 @@ public class UIClass {
 					}
 					break;
 				case 3:
+					System.out.println("Enter Mobile Id :");
+					int mobileid1=scan.nextInt();
 					
+					mobileservice=new Mobileserviceimpl();
+					try{
+						
+						CustomerMobileDetails mobiledetails1=new CustomerMobileDetails();
+						mobiledetails1.setMobileid(mobileid1);
+						mobileservice.deletemobile(mobileid1);
+						System.out.println("Record deleted");
+					}catch (MAException e) {
+						
+						System.err.println(e.getMessage());
+						
+					}
 
 					break;
 				case 4:

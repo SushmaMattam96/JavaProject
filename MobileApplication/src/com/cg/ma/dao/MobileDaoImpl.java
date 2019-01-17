@@ -117,5 +117,19 @@ public class MobileDaoImpl implements MobileDao {
 		}
 		return list1;
 	}
+	@Override
+	public int getdeletedetails(int Mobileid) throws MAException {
+		connection=JdbcUtility.getConnection();
+		int result=0;
+		try {
+			preparestatement=connection.prepareStatement(QueryMapper.deletemobiles);
+			preparestatement.setInt(1,Mobileid);
+			result=preparestatement.executeUpdate();
+		} catch (SQLException e) {
+			throw new MAException("Connection is not closed");
+		}
+		
+		return result;
+	}
 
 }

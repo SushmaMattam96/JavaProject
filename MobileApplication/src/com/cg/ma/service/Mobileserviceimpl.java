@@ -72,4 +72,13 @@ public class Mobileserviceimpl implements Mobileservice {
 		return mobiledao.getpricedetails(lowerrange,upperRange);
 	}
 
+	@Override
+	public int deletemobile(int Mobileid) throws MAException {
+		
+		return  mobiledao.getdeletedetails(Mobileid);
+		
+		
+		
+	}
+
 }

@@ -7,5 +7,6 @@ public interface QueryMapper {
 	String selectQuantity = "SELECT QUATITY FROM Mobiles WHERE Mobileid=?";
 	String viewQuantity = "SELECT * FROM Mobiles";
 	String mobileprice = "SELECT NAME FROM Mobiles WHERE PRICE BETWEEN ? and ?";
+	String deletemobiles = "DELETE FROM Mobiles WHERE Mobileid=?";
 
 }
