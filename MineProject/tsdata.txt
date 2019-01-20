@@ -1,0 +1,69 @@
+ create table truckdetails(truckid number primary key,trucktype varchar2(20),origin varchar2(20),destination varchar2(20),charges decimal,avaliableNos number);
+
+Table created.
+
+SQL> insert into truckdetails values(1000,'20 ton trailer','mumbai','delhi',30000,3);
+
+1 row created.
+
+SQL> insert into truckdetails values(2000,'20 ton trailer','delhi','mumbai',30000,2);
+
+1 row created.
+
+SQL> insert into truckdetails values(3000,'10 ton ','mumbai','kolkota',20000,7);
+
+1 row created.
+
+SQL> delete from trukdetails where truckid=3000;
+delete from trukdetails where truckid=3000
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> delete from truckdetails where truckid=3000;
+
+1 row deleted.
+
+SQL> insert into truckdetails values(1001,'10 ton ','mumbai','kolkota',20000,7);
+
+1 row created.
+
+SQL> insert into truckdetails values(2001,'10 ton ','kolkota','mumbai',20000,2);
+
+1 row created.
+
+SQL> insert into truckdetails values(1002,'10 ton ','Mumbai','Chennai',18000,7);
+
+1 row created.
+
+SQL> insert into truckdetails values(1003,'mini truck ','Mumbai','pune',5000,10);
+
+1 row created.
+
+SQL> insert into truckdetails values(1004,'mini truck ','Mumbai','Ahemdabad',7000,16);
+
+1 row created.
+
+SQL> insert into truckdetails values(3005,'Tempo','Pune','Nasik',4000,6);
+
+1 row created.
+
+SQL> create sequence booking_id_seq start with 1000;
+
+Sequence created.
+
+SQL> desc bookingdetail;
+ERROR:
+ORA-04043: object bookingdetail does not exist
+
+
+SQL> create table bookingdetail(bookingid number primary key,custid varchar2(20),custmobile number, truckid references truckdetails(truckid), nooftrucks number, dateoftransport date);
+
+Table created.
+
+
+
+
+
+
